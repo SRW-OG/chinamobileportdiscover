@@ -15,8 +15,8 @@ class Compare:
         today = datetime.date.today().strftime('%Y%m%d')
         yesterday = (datetime.date.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
 
-        sql1 = 'SELECT "公网IP地址","端口" FROM scanports WHERE "日期"="{date}"'.format(date=today)
-        sql2 = 'SELECT "公网IP地址","端口" FROM scanports WHERE "日期"="{date}"'.format(date=yesterday)
+        sql1 = 'SELECT "公网IP地址","端口","服务" FROM scanports WHERE "日期"="{date}"'.format(date=today)
+        sql2 = 'SELECT "公网IP地址","端口","服务" FROM scanports WHERE "日期"="{date}"'.format(date=yesterday)
 
         df1 = pd.read_sql_query(sql1, conn)
         df2 = pd.read_sql_query(sql2, conn)
