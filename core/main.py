@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from core.excel import *
-from core.scan import *
-from core.compare import *
-from core.alert import *
+from .excel import *
+from .scan import *
+from .compare import *
+from .alert import *
 
 def main():
     # 1.更新基准信息
