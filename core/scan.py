@@ -63,6 +63,8 @@ class NmapScan:
                     proto = port.attrib['protocol']
                     port_id = port.attrib['portid']
                     service = port.findall('service')[0].attrib['name']
+                    
+                    # Create a list of the port data
                     port_data.extend((date, ip_address, proto, port_id, service))
                     
                     # Add the port data to the host data
@@ -73,9 +75,9 @@ class NmapScan:
                 addr_info.extend((ip_address, host_name))
                 host_data.append(addr_info)
         
-
-            conn = sqlite3.connect('/opt/chinamobileportscan/db/ports.db')
-            df = pd.DataFrame(host_data)
-            df.columns = ['日期','公网IP地址', '协议', '端口', '服务']
-            df.to_sql('scanports', conn, schema=None, if_exists='append', index=False, index_label=None, chunksize=None)
-            conn.close()
+        #print(host_data)
+        conn = sqlite3.connect('/opt/chinamobileportscan/db/ports.db')
+        df = pd.DataFrame(host_data)
+        df.columns = ['日期','公网IP地址', '协议', '端口', '服务']
+        df.to_sql('scanports', conn, schema=None, if_exists='append', index=False, index_label=None, chunksize=None)
+        conn.close()
