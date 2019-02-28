@@ -2,7 +2,7 @@
 XX移动用于定期检测公网端口开放状态的工具。
 
 ## 效果
-[](https://github.com/SRW-OG/chinamobileportdiscover/blob/master/Pics/snipaste20190228_111808.png)
+![](https://github.com/SRW-OG/chinamobileportdiscover/blob/master/Pics/snipaste20190228_111808.png)
 
 # 环境
 CentOS 7.5
